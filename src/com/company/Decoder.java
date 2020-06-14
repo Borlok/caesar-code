@@ -7,8 +7,8 @@ public class Decoder {
 
     public void decode(String text, int offset) {
 
-        String finalCode = Arrays.stream(text.toLowerCase().split("\\.*"))
-                .map(x -> !(x.equals(",") || x.equals(" ") || x.equals(".")) ? (getAlphabet().get(getAlphabet().indexOf(x) + offset)) : x)
+        String finalCode = Arrays.stream(text.toLowerCase().split("\\w*"))
+                .map(x -> !(x.equals(",") || x.equals(" ")) ? (!(x.equals(".")) ? (getAlphabet().get(getAlphabet().indexOf(x) + offset)) : ".") : x)
                 .reduce("", String::concat);
         System.out.println(finalCode);
     }
