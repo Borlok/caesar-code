@@ -18,6 +18,5 @@ public class Decoder {
     private ArrayList<String> getAlphabet() {
         String alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяабвгдеёжзийклмнопрстуфхцчшщъыьэюя";
         return new ArrayList<>(Arrays.asList(alphabet.split("\\.*")));
-
     }
 }
